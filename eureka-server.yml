@@ -10,8 +10,11 @@ spring:
       password: admin123
 
 eureka:
-  instance:
+   instance:
     hostname: localhost
+    prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
+
+ 
