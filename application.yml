@@ -1,18 +1,13 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
-    prefer-ip-address: true
-    
+server:
+  port: 8888
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-logging:
-  level:
-    root: INFO
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hemanthsaich/config-repo.git  # Replace with your Git repository URL
+          clone-on-start: true
+          default-label: main
